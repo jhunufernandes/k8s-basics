@@ -1,0 +1,6 @@
+build:
+  fastapi-basics:
+    image: okteto.dev/fastapi-basics:1.0.0
+    context: .
+deploy:
+  - kubectl apply -f k8s.yaml
