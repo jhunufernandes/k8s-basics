@@ -1,6 +1,6 @@
 build:
-  fastapi-basics:
-    image: okteto.dev/fastapi-basics:1.0.0
+  k8s-basics:
+    image: okteto.dev/k8s-basics:1.0.0
     context: ..
     dockerfile: Dockerfile
 deploy:

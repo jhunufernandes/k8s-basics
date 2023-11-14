@@ -1,49 +1,49 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: fastapi-basics
+  name: k8s-basics
 spec:
   selector:
     matchLabels:
-      app: fastapi-basics
+      app: k8s-basics
   template:
     metadata:
       labels:
-        app: fastapi-basics
+        app: k8s-basics
     spec:
       containers:
-      - image: okteto.dev/fastapi-basics:1.0.0
-        name: fastapi-basics
+      - image: okteto.dev/k8s-basics:1.0.0
+        name: k8s-basics
 
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: fastapi-basics
+  name: k8s-basics
 spec:
   type: ClusterIP
   ports:
-  - name: "fastapi-basics"
+  - name: "k8s-basics"
     port: 80
   selector:
-    app: fastapi-basics
+    app: k8s-basics
 
 ---
 
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: fastapi-basics
+  name: k8s-basics
   annotations:
-    dev.okteto.com/generate-host: fastapi-basics
+    dev.okteto.com/generate-host: k8s-basics
 spec:
   rules:
     - http:
         paths:
           - backend:
               service:
-                name: fastapi-basics
+                name: k8s-basics
                 port:
                   number: 80
             path: /
