@@ -1,0 +1,3 @@
+[submodule "ampernetacle"]
+	path = ampernetacle
+	url = https://github.com/jpetazzo/ampernetacle
