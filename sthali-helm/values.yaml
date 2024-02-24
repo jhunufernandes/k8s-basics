@@ -1,0 +1,10 @@
+favorite:
+  drink: coffee
+  food: pizza
+
+service:
+  type: ClusterIP
+  port: 80
+
+deployment:
+  port: 80
